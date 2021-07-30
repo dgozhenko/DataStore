@@ -27,16 +27,16 @@ class ProtoStoreImpl @Inject constructor(@ApplicationContext context: Context): 
             val currentFilter = currentFilters.filter
             val changedFilter = if (enable) {
                 when (currentFilter) {
-                    FilterOption.Filter.BEGINNER_ADVANCED -> FilterOption.Filter.ADVANCED
-                    FilterOption.Filter.BEGINNER_COMPLETED -> FilterOption.Filter.COMPLETED
-                    FilterOption.Filter.ALL -> FilterOption.Filter.ADVANCED_COMPLETED
-                    else -> FilterOption.Filter.NONE
+                    FilterOption.Filter.ADVANCED -> FilterOption.Filter.BEGINNER_ADVANCED
+                    FilterOption.Filter.COMPLETED -> FilterOption.Filter.BEGINNER_COMPLETED
+                    FilterOption.Filter.ADVANCED_COMPLETED -> FilterOption.Filter.ALL
+                    else -> FilterOption.Filter.BEGINNER
                 }
             } else {
                 when (currentFilter) {
-                    FilterOption.Filter.BEGINNER_ADVANCED -> FilterOption.Filter.BEGINNER
-                    FilterOption.Filter.ADVANCED_COMPLETED -> FilterOption.Filter.COMPLETED
-                    FilterOption.Filter.ALL -> FilterOption.Filter.BEGINNER_COMPLETED
+                    FilterOption.Filter.BEGINNER_ADVANCED -> FilterOption.Filter.ADVANCED
+                    FilterOption.Filter.BEGINNER_COMPLETED -> FilterOption.Filter.COMPLETED
+                    FilterOption.Filter.ALL -> FilterOption.Filter.ADVANCED_COMPLETED
                     else -> FilterOption.Filter.NONE
                 }
             }
