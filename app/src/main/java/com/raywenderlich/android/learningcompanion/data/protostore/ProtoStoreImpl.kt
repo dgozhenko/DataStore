@@ -34,9 +34,9 @@ class ProtoStoreImpl @Inject constructor(@ApplicationContext context: Context): 
                 }
             } else {
                 when (currentFilter) {
-                    FilterOption.Filter.BEGINNER_ADVANCED -> FilterOption.Filter.ADVANCED
-                    FilterOption.Filter.BEGINNER_COMPLETED -> FilterOption.Filter.COMPLETED
-                    FilterOption.Filter.ALL -> FilterOption.Filter.ADVANCED_COMPLETED
+                    FilterOption.Filter.BEGINNER_ADVANCED -> FilterOption.Filter.BEGINNER
+                    FilterOption.Filter.ADVANCED_COMPLETED -> FilterOption.Filter.COMPLETED
+                    FilterOption.Filter.ALL -> FilterOption.Filter.BEGINNER_COMPLETED
                     else -> FilterOption.Filter.NONE
                 }
             }
